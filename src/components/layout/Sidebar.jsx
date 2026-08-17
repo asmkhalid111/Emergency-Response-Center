@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useAppContext } from '../../store/AppContext';
 import { 
   LayoutDashboard, 
@@ -29,10 +29,10 @@ function Sidebar() {
 
   return (
     <aside className={`sidebar ${!isSidebarOpen ? 'closed' : ''}`}>
-      <div className="sidebar-brand">
+      <Link to="/dashboard" className="sidebar-brand" style={{ textDecoration: 'none', color: 'inherit' }}>
         <span className="brand-icon">🚨</span>
         <h2>RESPONSE COMMAND</h2>
-      </div>
+      </Link>
       
       <nav className="sidebar-nav">
         {navItems.map((item) => (
